@@ -54,7 +54,7 @@ CREATE TABLE DRIVER
     gender VARCHAR(6) NOT NULL,
     date_of_birth DATE NOT NULL,
     license_number BIGINT NOT NULL,
-    primary key(license_number),
+    primary key(license_number)
 );
 
 CREATE TABLE DRIVER_VEHICLE
