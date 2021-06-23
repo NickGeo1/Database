@@ -238,19 +238,25 @@ CREATE TABLE MODEL
 
 ALTER TABLE CONTRACTS ADD
 foreign key(CUSTOMER_email)
-references CUSTOMER(email)
+references CUSTOMER(email);
+
+ALTER TABLE CONTRACTS ADD
 foreign key(VEHICLES_plates)
 references VEHICLES(plates);
 
 ALTER TABLE CUSTOMER ADD
 foreign key(license_number)
-references DRIVER(license_number),
+references DRIVER(license_number);
+
+ALTER TABLE CUSTOMER ADD
 foreign key(CONTRACTS_number)
 references CONTRACTS(number);
 
 ALTER TABLE VEHICLES ADD
 foreign key(contract_number)
-references CONTRACT(number),
+references CONTRACTS(number);
+
+ALTER TABLE VEHICLES ADD
 foreign key(CUSTOMER_email)
 references CUSTOMER(email);
 
@@ -258,15 +264,19 @@ ALTER TABLE DRIVER ADD
 foreign key(license_number)
 references ADDRESS(license);
 
-ALTER TABLE DRIVER_VEHICLE
+ALTER TABLE DRIVER_VEHICLE ADD
 foreign key(DRIVER_license_number)
-references DRIVER(license_number),
+references DRIVER(license_number);
+
+ALTER TABLE DRIVER_VEHICLE ADD
 foreign key(VEHICLES_plates)
 references VEHICLES(plates);
 
 ALTER TABLE DRIVER_CONTRACT ADD
 foreign key(DRIVER_license_number)
-references DRIVER(license_number),
+references DRIVER(license_number);
+
+ALTER TABLE DRIVER_CONTRACT ADD
 foreign key(CONTRACTS_number)
 references CONTRACTS(number);
 
@@ -276,8 +286,14 @@ references CUSTOMER(email);
 
 ALTER TABLE DRIVER_AND_VEHICLE_IN_ACCIDENT ADD
 foreign key(ACCIDENT_id)
-references ACCIDENT(id),
+references ACCIDENT(id);
+
+ALTER TABLE DRIVER_AND_VEHICLE_IN_ACCIDENT ADD
 foreign key(VEHICLES_plates)
-references VEHICLES(plates),
+references VEHICLES(plates);
+
+ALTER TABLE DRIVER_AND_VEHICLE_IN_ACCIDENT ADD
 foreign key(DRIVER_license_number)
 references DRIVER(license_number);
+
+DROP TABLE address, accident, contracts, customer, driver, driver_and_vehicle_in_accident, driver_contract, driver_vehicle, phone_numbers, vehicles, model;
