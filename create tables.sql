@@ -34,7 +34,7 @@ CREATE TABLE VEHICLES
     plates VARCHAR(10) NOT NULL,
     registry_number INT NOT NULL,
     color VARCHAR(10) NOT NULL,
-    year INT NOT NULL,
+    year SMALLINT NOT NULL,
     current_price INT NOT NULL,
     contract_number INT NOT NULL,
     caregory VARCHAR(20) NOT NULL,
