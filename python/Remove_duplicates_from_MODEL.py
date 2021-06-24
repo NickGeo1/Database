@@ -10,7 +10,7 @@ models=[]
 lineindex=0
 temp = ''
 
-for i in range (2,len(lines)-1,2):
+for i in range (2,len(lines),2):
 
     lineindex = lineindex+1 if i>2 else lineindex
     

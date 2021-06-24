@@ -5,7 +5,7 @@
 --     starting_date DATE NOT NULL,
 --     end_date DATE NOT NULL,
 --     price INT NOT NULL,
---     CUSTOMER_email VARCHAR(45) NOT NULL,
+--     CUSTOMER_email VARCHAR(80) NOT NULL,
 --     VEHICLES_plates VARCHAR(10) NOT NULL,
 --     
 --     primary key(number,CUSTOMER_email,VEHICLES_plates),
@@ -21,7 +21,7 @@
 --     gender VARCHAR(6) NOT NULL,
 --     date_of_birth DATE NOT NULL,
 --     license_number BIGINT NOT NULL,
---     email VARCHAR(45) NOT NULL,
+--     email VARCHAR(80) NOT NULL,
 --     CONTRACTS_number INT NOT NULL,
 --     primary key(license_number,email,CONTRACTS_number),
 -- 	unique(license_number),
@@ -38,8 +38,8 @@
 --     current_price INT NOT NULL,
 --     contract_number INT NOT NULL,
 --     category VARCHAR(20) NOT NULL,
---     CUSTOMER_email VARCHAR(45) NOT NULL,
---     MODEL_model VARCHAR(20) NOT NULL,
+--     CUSTOMER_email VARCHAR(80) NOT NULL,
+--     MODEL_model VARCHAR(100) NOT NULL,
 --     PRIMARY KEY (plates,registry_number,contract_number,CUSTOMER_email),
 --     unique(plates),
 --     unique(contract_number),
@@ -105,15 +105,15 @@
 -- CREATE TABLE PHONE_NUMBERS
 -- (
 --     number BIGINT NOT NULL,
---     CUSTOMER_email VARCHAR(45) NOT NULL,
+--     CUSTOMER_email VARCHAR(80) NOT NULL,
 --     primary key(number,CUSTOMER_email)    
 -- );
 
 -- CREATE TABLE MODEL
 -- (
---     model VARCHAR(20) NOT NULL,
---     type VARCHAR(15) NOT NULL,
---     manufacturer VARCHAR(20) NOT NULL,
+--     model VARCHAR(100) NOT NULL,
+--     type VARCHAR(100) NOT NULL,
+--     manufacturer VARCHAR(30) NOT NULL,
 --     primary key(model)
 -- );
 
@@ -126,7 +126,7 @@ CREATE TABLE CONTRACTS
     starting_date DATE NOT NULL,
     end_date DATE NOT NULL,
     price INT NOT NULL,
-    CUSTOMER_email VARCHAR(45) NOT NULL,
+    CUSTOMER_email VARCHAR(80) NOT NULL,
     VEHICLES_plates VARCHAR(10) NOT NULL,
     
     primary key(number,CUSTOMER_email,VEHICLES_plates),
@@ -142,7 +142,7 @@ CREATE TABLE CUSTOMER
     gender VARCHAR(6) NOT NULL,
     date_of_birth DATE NOT NULL,
     license_number BIGINT NOT NULL,
-    email VARCHAR(45) NOT NULL,
+    email VARCHAR(80) NOT NULL,
     CONTRACTS_number BIGINT NOT NULL,
     primary key(license_number,email,CONTRACTS_number),
 	unique(license_number),
@@ -159,8 +159,8 @@ CREATE TABLE VEHICLES
     current_price INT NOT NULL,
     contract_number BIGINT NOT NULL,
     category VARCHAR(20) NOT NULL,
-    CUSTOMER_email VARCHAR(45) NOT NULL,
-    MODEL_model VARCHAR(20) NOT NULL,
+    CUSTOMER_email VARCHAR(80) NOT NULL,
+    MODEL_model VARCHAR(100) NOT NULL,
     PRIMARY KEY (plates,registry_number,contract_number,CUSTOMER_email),
     unique(plates),
     unique(contract_number),
@@ -226,15 +226,15 @@ CREATE TABLE ADDRESS
 CREATE TABLE PHONE_NUMBERS
 (
     number BIGINT NOT NULL,
-    CUSTOMER_email VARCHAR(45) NOT NULL,
+    CUSTOMER_email VARCHAR(80) NOT NULL,
     primary key(number,CUSTOMER_email)    
 );
 
 CREATE TABLE MODEL
 (
-    model VARCHAR(20) NOT NULL,
-    type VARCHAR(15) NOT NULL,
-    manufacturer VARCHAR(20) NOT NULL,
+    model VARCHAR(100) NOT NULL,
+    type VARCHAR(100) NOT NULL,
+    manufacturer VARCHAR(30) NOT NULL,
     primary key(model)
 );
 
