@@ -1,9 +1,14 @@
-f = open("pinakides.txt", "w")
+import random
+
 letters = "ABEZHIKMNOPTYX"
-for letter_a in letters:
-    for letter_b in letters:
-        for letter_c in letters:
-            for i in range(1000, 10000):
-                f.write(letter_a + letter_b + letter_c + " - " + str(i))
-                print(letter_a + letter_b + letter_c + " - " + str(i))
-f.close()
+letters = list(letters)
+for i in range(0, 500):
+    f = open("pinakides.txt", 'r')
+    pinakida = random.choice(letters) + random.choice(letters) + random.choice(letters) + " - " + str(random.randrange(1000, 10000))
+    previous_pinakides = f.read().split('\n')
+    if pinakida not in previous_pinakides:
+        file = open("pinakides.txt", 'a')
+        file.write(pinakida + '\n')
+        print(pinakida)
+        file.close()
+    f.close()
