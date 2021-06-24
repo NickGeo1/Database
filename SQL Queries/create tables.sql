@@ -143,7 +143,7 @@ CREATE TABLE CUSTOMER
     date_of_birth DATE NOT NULL,
     license_number BIGINT NOT NULL,
     email VARCHAR(45) NOT NULL,
-    CONTRACTS_number INT NOT NULL,
+    CONTRACTS_number BIGINT NOT NULL,
     primary key(license_number,email,CONTRACTS_number),
 	unique(license_number),
 	unique(email),
