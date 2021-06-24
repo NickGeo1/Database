@@ -1,31 +1,29 @@
 import io
 
-f = open('CONTRACTS.sql', 'r')
+f = open('CUSTOMER.sql', 'r')
 lines = f.read()
 lines = lines.split('\n')
 f.close()
 
-f = io.open('DRIVER_CONTRACT.sql', 'r', encoding='UTF-8')
+'''f = io.open('DRIVER_CONTRACT.sql', 'r', encoding='UTF-8')
 lines_2 = f.read()
 lines_2 = lines_2.split('\n')
-f.close()
+f.close()'''
 
-new_file = io.open('DRIVER_CONTRACT2.sql', 'a', encoding='UTF-8')
+new_file = io.open('DRIVER.sql', 'a', encoding='UTF-8')
 
 for i in range(0, 500):
     previous_query  = lines[i]
-    previous_query  = previous_query.replace(',', '')
     previous_query  = previous_query.split()
-    contract_no     = previous_query[11][1:]
-    query = lines_2[i]
-    query = query.replace("'contracts'", contract_no)
+    previous_query  = previous_query[11] + previous_query[12] + previous_query[13] + previous_query[14] + previous_query[15][:-1] + ")"
+    query = "insert into DRIVER (firstname, lastname, gender, date_of_birth, license_number) values " + previous_query
     print(query)
     new_file.write(query + '\n')
 
 new_file.close()
 
-query = "insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (3922661562, 'Simple', '1991-07-29', '1985-05-10', 19806, 'mtupper0@twitter.com', 'PME - 7929');"
+query = "insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('Phil', 'Pennacci', 'Male', '18/11/1975', 7701984209, 'cblazekdv@geocities.jp', 4755150079);"
 
-query = query.replace(',', '')
 query = query.split()
-print(query[11][1:])
+query = query[11] + query[12] + query[13] + query[14] + query[15][:-1] + ")"
+print(query)
