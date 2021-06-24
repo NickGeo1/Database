@@ -1,14 +1,14 @@
-f = open('CONTRACTS.sql', 'r')
+'''f = open('CUSTOMER.sql', 'r')
 lines = f.read()
 lines = lines.split('\n')
 f.close()
 
-f = open('CUSTOMER.sql', 'r')
+f = open('ADDRESS.sql', 'r')
 lines_2 = f.read()
 lines_2 = lines_2.split('\n')
 f.close()
 
-new_file = open('CUSTOMERS2.sql', 'a')
+new_file = open('ADDRESS2.sql', 'a')
 
 for i in range(0, 500):
     previous_query  = lines[i].replace(',', '')
@@ -21,9 +21,9 @@ for i in range(0, 500):
     print(query)
     new_file.write(query + '\n')
 
-new_file.close()
+new_file.close()'''
 
-'''query = "insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (48715563, 'Mixed', '1990-06-25', '2039-06-16', 7886, 'gcusick16@businessinsider.com', 'BMB - 6567');"
+query = "insert into ADDRESS (zip_code, city, country, street, number, license, type) values (30144, 'Huaibei', 'China', 'Dapin', '12', 49498315691, 'driver');"
 query = query.replace(',', '')
 query = query.split()
-print(query)'''
+print(query)
