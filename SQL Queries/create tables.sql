@@ -121,7 +121,7 @@ DROP TABLE address, accident, contracts, customer, driver, driver_and_vehicle_in
 
 CREATE TABLE CONTRACTS 
 (
-    number INT NOT NULL,
+    number BIGINT NOT NULL,
     category VARCHAR(20) NOT NULL,
     starting_date DATE NOT NULL,
     end_date DATE NOT NULL,
