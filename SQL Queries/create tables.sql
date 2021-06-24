@@ -37,7 +37,7 @@
 --     year SMALLINT NOT NULL,
 --     current_price INT NOT NULL,
 --     contract_number INT NOT NULL,
---     caregory VARCHAR(20) NOT NULL,
+--     category VARCHAR(20) NOT NULL,
 --     CUSTOMER_email VARCHAR(45) NOT NULL,
 --     MODEL_model VARCHAR(20) NOT NULL,
 --     PRIMARY KEY (plates,registry_number,contract_number,CUSTOMER_email),
@@ -155,10 +155,10 @@ CREATE TABLE VEHICLES
     plates VARCHAR(10) NOT NULL,
     registry_number INT NOT NULL,
     color VARCHAR(10) NOT NULL,
-    year INT NOT NULL,
+    year SMALLINT NOT NULL,
     current_price INT NOT NULL,
-    contract_number INT NOT NULL,
-    caregory VARCHAR(20) NOT NULL,
+    contract_number BIGINT NOT NULL,
+    category VARCHAR(20) NOT NULL,
     CUSTOMER_email VARCHAR(45) NOT NULL,
     MODEL_model VARCHAR(20) NOT NULL,
     PRIMARY KEY (plates,registry_number,contract_number,CUSTOMER_email),
@@ -248,7 +248,7 @@ references VEHICLES(plates);
 
 ALTER TABLE CUSTOMER ADD
 foreign key(license_number)
-references DRIVER(license_number);
+references ADDRESS(license_number);
 
 ALTER TABLE CUSTOMER ADD
 foreign key(CONTRACTS_number)
