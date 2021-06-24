@@ -1,9 +1,9 @@
-f = open('CONTRACTS2.sql', 'r')
+f = open('CONTRACTS.sql', 'r')
 lines = f.read()
 lines = lines.split('\n')
 f.close()
 
-f = open('CUSTOMERS.sql', 'r')
+f = open('CUSTOMER.sql', 'r')
 lines_2 = f.read()
 lines_2 = lines_2.split('\n')
 f.close()
