@@ -76,7 +76,7 @@
 --     id INT NOT NULL,
 --     date DATE NOT NULL,
 --     time TIME NOT NULL,
---     description VARCHAR(50) NOT NULL,
+--     description VARCHAR(200) NOT NULL,
 --     primary key(id)
 -- );
 
