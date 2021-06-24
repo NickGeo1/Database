@@ -117,6 +117,8 @@
 --     primary key(model)
 -- );
 
+DROP TABLE address, accident, contracts, customer, driver, driver_and_vehicle_in_accident, driver_contract, driver_vehicle, phone_numbers, vehicles, model;
+
 CREATE TABLE CONTRACTS 
 (
     number INT NOT NULL,
@@ -236,6 +238,16 @@ CREATE TABLE MODEL
     primary key(model)
 );
 
+INSERT INTO CUSTOMER VALUES ('Georgios', 'Seimenis', 'Male', '2001/10/26', 10121001790, 'giorgosseimenis@gmail.com', 103943878);
+INSERT INTO CONTRACTS VALUES (103943878, 'Simple', '2021/06/04', '2021/10/04', 400, 'giorgosseimenis@gmail.com', 'ZHK7027');
+INSERT INTO VEHICLES VALUES ('ZHK7027', '23809457', 'Dark Green', 2001, 1500, 103943878, 'Car', 'giorgosseimenis@gmail.com', 'Polo');
+INSERT INTO DRIVER VALUES('Georgios', 'Seimenis', 'Male', '2001/10/26', 10121001790);
+INSERT INTO DRIVER_CONTRACT VALUES (10121001790, 103943878);
+INSERT INTO DRIVER_VEHICLE VALUES (10121001790, 'ZHK7027');
+INSERT INTO PHONE_NUMBERS VALUES (6946696413, 'giorgosseimenis@gmail.com');
+INSERT INTO ADDRESS VALUES (15341, 'Athens', 'Greece', 'Karaiskaki', 31, 10121001790, 'Customer');
+INSERT INTO MODEL VALUES('Polo', 'Car', 'VolksWagen');
+
 ALTER TABLE CONTRACTS ADD
 foreign key(CUSTOMER_email)
 references CUSTOMER(email);
@@ -295,5 +307,3 @@ references VEHICLES(plates);
 ALTER TABLE DRIVER_AND_VEHICLE_IN_ACCIDENT ADD
 foreign key(DRIVER_license_number)
 references DRIVER(license_number);
-
-DROP TABLE address, accident, contracts, customer, driver, driver_and_vehicle_in_accident, driver_contract, driver_vehicle, phone_numbers, vehicles, model;

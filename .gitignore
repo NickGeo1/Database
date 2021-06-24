@@ -51,3 +51,4 @@ Module.symvers
 Mkfile.old
 dkms.conf
 *.bak
+~WRL3407.tmp
