@@ -1,6 +1,9 @@
 import io
 
-k = int(input("Give the column number (starting from 1) where the primary key is --> "))
+k = input("Give the column number/s (starting from 1) where the primary key/s is/are splitted with space(example 1 2 or 2 3) --> ")
+k = k.split(' ')
+k = [int(key) for key in k]
+
 filename = input("Give the file name without the sql extension --> ")
 
 file = io.open(filename+".sql", 'r', encoding='UTF-8')
@@ -22,10 +25,13 @@ for i in range (2,len(lines),2):
     else:
         lines[i] = lines[i][0:-2]
 
-    temp=lines[i].split(",")[k-1]
+    if(len(k) == 1):
+        temp=lines[i].split(",")[k[0]-1]
+    else:
+        temp=(lines[i].split(",")[k[0]-1], lines[i].split(",")[k[1]-1])        
 
     if(temp in primary_keys):
-        wholelines[lineindex] = ''       
+        wholelines[lineindex] = ''        
     else:
         primary_keys.append(temp)
 
