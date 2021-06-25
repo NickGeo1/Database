@@ -78,7 +78,7 @@ CREATE TABLE ACCIDENT
     id INT NOT NULL,
     date DATE NOT NULL,
     time TIME NOT NULL,
-    description ΤΕΧΤ NOT NULL,
+    description VARCHAR(100) NOT NULL,
     primary key(id)
 );
 
