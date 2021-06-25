@@ -153,7 +153,7 @@ insert into DRIVER_CONTRACT (CONTRACTS_number, DRIVER_license_number) values (22
 insert into DRIVER_CONTRACT (CONTRACTS_number, DRIVER_license_number) values (2628067237, 78084776717);
 insert into DRIVER_CONTRACT (CONTRACTS_number, DRIVER_license_number) values (3466085629, 23469395979);
 insert into DRIVER_CONTRACT (CONTRACTS_number, DRIVER_license_number) values (1740785766, 485685819);
-insert into DRIVER_CONTRACT (CONTRACTS_number, DRIVER_license_number) values (9789838597, 24720163954);
+insert into DRIVER_CONTRACT (CONTRACTS_number, DRIVER_license_number) values (9789838597, 59207372698);
 insert into DRIVER_CONTRACT (CONTRACTS_number, DRIVER_license_number) values (695258910, 68893042415);
 insert into DRIVER_CONTRACT (CONTRACTS_number, DRIVER_license_number) values (7231395128, 98432343798);
 insert into DRIVER_CONTRACT (CONTRACTS_number, DRIVER_license_number) values (5691703449, 61590985335);
@@ -264,7 +264,7 @@ insert into DRIVER_CONTRACT (CONTRACTS_number, DRIVER_license_number) values (42
 insert into DRIVER_CONTRACT (CONTRACTS_number, DRIVER_license_number) values (605057537, 25609153418);
 insert into DRIVER_CONTRACT (CONTRACTS_number, DRIVER_license_number) values (6978324577, 15163020245);
 insert into DRIVER_CONTRACT (CONTRACTS_number, DRIVER_license_number) values (9320287053, 90217634259);
-insert into DRIVER_CONTRACT (CONTRACTS_number, DRIVER_license_number) values (2515469356, 72198065466);
+insert into DRIVER_CONTRACT (CONTRACTS_number, DRIVER_license_number) values (2515469356, 58672342719);
 insert into DRIVER_CONTRACT (CONTRACTS_number, DRIVER_license_number) values (1833800086, 19939548357);
 insert into DRIVER_CONTRACT (CONTRACTS_number, DRIVER_license_number) values (3494020043, 79045970892);
 insert into DRIVER_CONTRACT (CONTRACTS_number, DRIVER_license_number) values (6318620986, 30844905404);

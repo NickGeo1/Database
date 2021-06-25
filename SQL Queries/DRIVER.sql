@@ -153,7 +153,7 @@ insert into DRIVER (firstname, lastname, gender, date_of_birth, license_number) 
 insert into DRIVER (firstname, lastname, gender, date_of_birth, license_number) values ('Cristionna','Millar','Male','1/1/1995',78084776717);
 insert into DRIVER (firstname, lastname, gender, date_of_birth, license_number) values ('Eddy','Storek','Male','23/4/1962',23469395979);
 insert into DRIVER (firstname, lastname, gender, date_of_birth, license_number) values ('Ilysa','Haugg','Female','3/2/1965',485685819);
-insert into DRIVER (firstname, lastname, gender, date_of_birth, license_number) values ('Latrina','LeBarr','Male','30/12/1963',24720163954);
+insert into DRIVER (firstname, lastname, gender, date_of_birth, license_number) values ('Latrina','LeBarr','Male','30/12/1963',59207372698);
 insert into DRIVER (firstname, lastname, gender, date_of_birth, license_number) values ('Ricky','Scipsey','Male','4/11/1982',68893042415);
 insert into DRIVER (firstname, lastname, gender, date_of_birth, license_number) values ('Carmelle','Garmey','Female','7/7/1973',98432343798);
 insert into DRIVER (firstname, lastname, gender, date_of_birth, license_number) values ('Odette','Bridewell','Female','7/5/1975',61590985335);
@@ -264,7 +264,7 @@ insert into DRIVER (firstname, lastname, gender, date_of_birth, license_number) 
 insert into DRIVER (firstname, lastname, gender, date_of_birth, license_number) values ('Dolly','Cecere','Female','24/6/1989',25609153418);
 insert into DRIVER (firstname, lastname, gender, date_of_birth, license_number) values ('Aluino','Krauss','Female','23/11/1980',15163020245);
 insert into DRIVER (firstname, lastname, gender, date_of_birth, license_number) values ('Pepi','Gander','Male','28/12/1984',90217634259);
-insert into DRIVER (firstname, lastname, gender, date_of_birth, license_number) values ('Annamaria','deMerida','Male','17/4/2001',72198065466);
+insert into DRIVER (firstname, lastname, gender, date_of_birth, license_number) values ('Annamaria','deMerida','Male','17/4/2001',58672342719);
 insert into DRIVER (firstname, lastname, gender, date_of_birth, license_number) values ('Twila','Arnhold','Male','27/11/1988',19939548357);
 insert into DRIVER (firstname, lastname, gender, date_of_birth, license_number) values ('Randee','Niece','Male','11/6/1961',79045970892);
 insert into DRIVER (firstname, lastname, gender, date_of_birth, license_number) values ('Dulsea','Giuron','Male','13/5/1956',30844905404);

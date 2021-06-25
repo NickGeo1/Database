@@ -153,7 +153,7 @@ insert into DRIVER_VEHICLE (VEHICLES_plates, DRIVER_license_number) values ('TAP
 insert into DRIVER_VEHICLE (VEHICLES_plates, DRIVER_license_number) values ('ZIE - 2873', 78084776717);
 insert into DRIVER_VEHICLE (VEHICLES_plates, DRIVER_license_number) values ('HTN - 5493', 23469395979);
 insert into DRIVER_VEHICLE (VEHICLES_plates, DRIVER_license_number) values ('XMX - 5378', 485685819);
-insert into DRIVER_VEHICLE (VEHICLES_plates, DRIVER_license_number) values ('YET - 3399', 24720163954);
+insert into DRIVER_VEHICLE (VEHICLES_plates, DRIVER_license_number) values ('YET - 3399', 59207372698);
 insert into DRIVER_VEHICLE (VEHICLES_plates, DRIVER_license_number) values ('OYB - 9397', 68893042415);
 insert into DRIVER_VEHICLE (VEHICLES_plates, DRIVER_license_number) values ('YIY - 4099', 98432343798);
 insert into DRIVER_VEHICLE (VEHICLES_plates, DRIVER_license_number) values ('ZXB - 5365', 61590985335);
@@ -264,7 +264,7 @@ insert into DRIVER_VEHICLE (VEHICLES_plates, DRIVER_license_number) values ('PEH
 insert into DRIVER_VEHICLE (VEHICLES_plates, DRIVER_license_number) values ('TKM - 7941', 25609153418);
 insert into DRIVER_VEHICLE (VEHICLES_plates, DRIVER_license_number) values ('ZKI - 9234', 15163020245);
 insert into DRIVER_VEHICLE (VEHICLES_plates, DRIVER_license_number) values ('NZI - 9983', 90217634259);
-insert into DRIVER_VEHICLE (VEHICLES_plates, DRIVER_license_number) values ('KXM - 4480', 72198065466);
+insert into DRIVER_VEHICLE (VEHICLES_plates, DRIVER_license_number) values ('KXM - 4480', 58672342719);
 insert into DRIVER_VEHICLE (VEHICLES_plates, DRIVER_license_number) values ('ONT - 5030', 19939548357);
 insert into DRIVER_VEHICLE (VEHICLES_plates, DRIVER_license_number) values ('YHA - 2275', 79045970892);
 insert into DRIVER_VEHICLE (VEHICLES_plates, DRIVER_license_number) values ('NPM - 1577', 30844905404);
