@@ -40,7 +40,12 @@ to_lines = to_file.read().split('\n')
 writefile = io.open("NEWFILE.sql", "a", encoding="UTF-8")
 for i in range(len(to_lines) - 1):
     new_line = to_lines[i].replace("'" + placeholder + "'", "'" + keys_to_be_passed[i] + "'" if type(keys_to_be_passed[i]) == str else str(keys_to_be_passed[i]))
-    print(new_line)
+    writefile.write(new_line + '\n')
+
+print("Successfully replaced values to a new file.")
+from_file.close()
+to_file.close()
+writefile.close()
 
 '''query = "insert into ACCIDENT (id, date, time, description) values (1205, '25-Feb-1998', '12:36 PM', 'The other driver was looking at his phone');"
 query = query[query.find('(', query.find('values')):].strip("();").split(',')
