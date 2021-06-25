@@ -121,7 +121,6 @@ insert into ACCIDENT (id, date, time, description) values (9685, '06-Sep-1981', 
 insert into ACCIDENT (id, date, time, description) values (4697, '03-Sep-1986', '10:33 PM', 'The other driver passed a red light');
 insert into ACCIDENT (id, date, time, description) values (4891, '28-Aug-1988', '5:30 PM', 'The other driver left a stop sign without stopping');
 insert into ACCIDENT (id, date, time, description) values (3570, '17-Sep-1982', '12:39 AM', 'The other driver left a stop sign without stopping');
-insert into ACCIDENT (id, date, time, description) values (5344, '29-Aug-1957', '2:04 PM', 'The other driver was looking at his phone');
 insert into ACCIDENT (id, date, time, description) values (6518, '23-Mar-1964', '2:44 PM', 'The other driver passed a red light');
 insert into ACCIDENT (id, date, time, description) values (3372, '06-Dec-2001', '3:16 AM', 'The other driver passed a red light');
 insert into ACCIDENT (id, date, time, description) values (281, '28-Oct-1960', '9:56 AM', 'The other driver passed a red light');
@@ -148,7 +147,6 @@ insert into ACCIDENT (id, date, time, description) values (3368, '28-Sep-1973', 
 insert into ACCIDENT (id, date, time, description) values (1692, '06-Jul-1979', '9:47 PM', 'The other driver was looking at his phone');
 insert into ACCIDENT (id, date, time, description) values (2447, '24-Mar-1975', '1:43 AM', 'The other driver passed a red light');
 insert into ACCIDENT (id, date, time, description) values (1304, '04-Jul-1988', '1:15 PM', 'The other driver was looking at his phone');
-insert into ACCIDENT (id, date, time, description) values (4802, '26-Sep-1962', '9:28 PM', 'The other driver was coming from left and i was coming from right');
 insert into ACCIDENT (id, date, time, description) values (9665, '10-Oct-1974', '5:56 AM', 'The other driver left a stop sign without stopping');
 insert into ACCIDENT (id, date, time, description) values (8465, '23-Nov-1978', '8:11 PM', 'The other driver was looking at his phone');
 insert into ACCIDENT (id, date, time, description) values (8025, '09-Sep-1964', '10:52 PM', 'The other driver was coming from left and i was coming from right');
@@ -288,7 +286,6 @@ insert into ACCIDENT (id, date, time, description) values (2975, '06-Jul-1976', 
 insert into ACCIDENT (id, date, time, description) values (4965, '17-Oct-1982', '3:06 PM', 'The other driver was looking at his phone');
 insert into ACCIDENT (id, date, time, description) values (4554, '18-May-1974', '9:57 AM', 'The other driver passed a red light');
 insert into ACCIDENT (id, date, time, description) values (9048, '15-Mar-1977', '6:05 AM', 'The other driver was coming from left and i was coming from right');
-insert into ACCIDENT (id, date, time, description) values (3217, '11-Mar-1967', '9:05 AM', 'The other driver was looking at his phone');
 insert into ACCIDENT (id, date, time, description) values (8872, '18-Jan-2000', '5:20 PM', 'The other driver was coming from left and i was coming from right');
 insert into ACCIDENT (id, date, time, description) values (3032, '25-Mar-1958', '11:47 PM', 'The other driver was coming from left and i was coming from right');
 insert into ACCIDENT (id, date, time, description) values (3624, '25-May-1956', '7:19 PM', 'The other driver was looking at his phone');
@@ -307,7 +304,6 @@ insert into ACCIDENT (id, date, time, description) values (1441, '25-Jul-1996', 
 insert into ACCIDENT (id, date, time, description) values (4372, '14-Feb-1958', '11:21 PM', 'The other driver left a stop sign without stopping');
 insert into ACCIDENT (id, date, time, description) values (4140, '18-May-1997', '6:40 PM', 'The other driver passed a red light');
 insert into ACCIDENT (id, date, time, description) values (209, '28-Nov-1966', '12:47 AM', 'The other driver left a stop sign without stopping');
-insert into ACCIDENT (id, date, time, description) values (5763, '25-May-2000', '9:38 AM', 'The other driver was looking at his phone');
 insert into ACCIDENT (id, date, time, description) values (1403, '02-Feb-1979', '7:11 PM', 'The other driver left a stop sign without stopping');
 insert into ACCIDENT (id, date, time, description) values (4178, '08-Dec-1955', '9:43 PM', 'The other driver passed a red light');
 insert into ACCIDENT (id, date, time, description) values (9238, '22-Nov-1959', '6:23 PM', 'The other driver passed a red light');
@@ -442,7 +438,6 @@ insert into ACCIDENT (id, date, time, description) values (1918, '25-Sep-1969', 
 insert into ACCIDENT (id, date, time, description) values (4823, '01-Sep-1990', '7:57 PM', 'The other driver was looking at his phone');
 insert into ACCIDENT (id, date, time, description) values (3888, '25-Jan-1956', '6:34 PM', 'The other driver was coming from left and i was coming from right');
 insert into ACCIDENT (id, date, time, description) values (8467, '17-Oct-1990', '3:20 PM', 'The other driver was looking at his phone');
-insert into ACCIDENT (id, date, time, description) values (1897, '11-Dec-1956', '3:21 AM', 'The other driver was looking at his phone');
 insert into ACCIDENT (id, date, time, description) values (5078, '15-Jun-1978', '11:53 PM', 'The other driver was looking at his phone');
 insert into ACCIDENT (id, date, time, description) values (1109, '28-Jul-1955', '7:20 AM', 'The other driver passed a red light');
 insert into ACCIDENT (id, date, time, description) values (2691, '03-Sep-1968', '12:19 PM', 'The other driver passed a red light');
@@ -456,18 +451,15 @@ insert into ACCIDENT (id, date, time, description) values (7730, '26-Jul-1956', 
 insert into ACCIDENT (id, date, time, description) values (3293, '27-Jan-1998', '8:08 AM', 'The other driver was looking at his phone');
 insert into ACCIDENT (id, date, time, description) values (9752, '27-Mar-1982', '12:46 PM', 'The other driver left a stop sign without stopping');
 insert into ACCIDENT (id, date, time, description) values (90, '07-Apr-1993', '1:32 PM', 'The other driver was coming from left and i was coming from right');
-insert into ACCIDENT (id, date, time, description) values (529, '06-Nov-1980', '4:19 AM', 'The other driver left a stop sign without stopping');
 insert into ACCIDENT (id, date, time, description) values (4394, '03-Aug-1994', '11:08 PM', 'The other driver was coming from left and i was coming from right');
 insert into ACCIDENT (id, date, time, description) values (275, '03-Mar-1962', '12:45 AM', 'The other driver left a stop sign without stopping');
 insert into ACCIDENT (id, date, time, description) values (3628, '04-Aug-1984', '9:34 AM', 'The other driver passed a red light');
 insert into ACCIDENT (id, date, time, description) values (6038, '24-Nov-1983', '5:56 AM', 'The other driver passed a red light');
 insert into ACCIDENT (id, date, time, description) values (1457, '13-Feb-1982', '4:28 AM', 'The other driver passed a red light');
-insert into ACCIDENT (id, date, time, description) values (2412, '13-Feb-1976', '9:21 PM', 'The other driver left a stop sign without stopping');
 insert into ACCIDENT (id, date, time, description) values (7384, '27-Jun-1988', '4:46 PM', 'The other driver passed a red light');
 insert into ACCIDENT (id, date, time, description) values (711, '29-Mar-1991', '5:17 AM', 'The other driver left a stop sign without stopping');
 insert into ACCIDENT (id, date, time, description) values (6971, '05-Apr-1970', '10:18 PM', 'The other driver passed a red light');
 insert into ACCIDENT (id, date, time, description) values (6177, '16-Feb-1980', '1:08 AM', 'The other driver left a stop sign without stopping');
-insert into ACCIDENT (id, date, time, description) values (4108, '28-Oct-1986', '9:43 PM', 'The other driver was looking at his phone');
 insert into ACCIDENT (id, date, time, description) values (1696, '13-Jun-1985', '5:10 AM', 'The other driver passed a red light');
 insert into ACCIDENT (id, date, time, description) values (5179, '08-Dec-1980', '1:27 AM', 'The other driver left a stop sign without stopping');
 insert into ACCIDENT (id, date, time, description) values (3786, '15-Jan-1980', '8:50 PM', 'The other driver was coming from left and i was coming from right');
@@ -476,8 +468,6 @@ insert into ACCIDENT (id, date, time, description) values (5097, '18-Aug-1972', 
 insert into ACCIDENT (id, date, time, description) values (874, '03-Jun-1994', '8:36 AM', 'The other driver was looking at his phone');
 insert into ACCIDENT (id, date, time, description) values (4583, '22-Nov-1966', '1:48 PM', 'The other driver was coming from left and i was coming from right');
 insert into ACCIDENT (id, date, time, description) values (729, '28-Jul-1957', '2:21 PM', 'The other driver left a stop sign without stopping');
-insert into ACCIDENT (id, date, time, description) values (4877, '07-Dec-1962', '10:06 AM', 'The other driver left a stop sign without stopping');
-insert into ACCIDENT (id, date, time, description) values (711, '15-Jul-1971', '10:59 AM', 'The other driver was coming from left and i was coming from right');
 insert into ACCIDENT (id, date, time, description) values (3068, '06-Mar-1980', '7:44 PM', 'The other driver was coming from left and i was coming from right');
 insert into ACCIDENT (id, date, time, description) values (1126, '01-May-1977', '8:00 AM', 'The other driver was coming from left and i was coming from right');
 insert into ACCIDENT (id, date, time, description) values (2180, '11-Oct-1955', '10:35 AM', 'The other driver left a stop sign without stopping');
@@ -495,6 +485,5 @@ insert into ACCIDENT (id, date, time, description) values (5440, '16-Dec-1995', 
 insert into ACCIDENT (id, date, time, description) values (9231, '27-Mar-1993', '10:16 PM', 'The other driver passed a red light');
 insert into ACCIDENT (id, date, time, description) values (3771, '17-Jul-1978', '7:18 AM', 'The other driver was coming from left and i was coming from right');
 insert into ACCIDENT (id, date, time, description) values (7249, '29-Dec-1990', '11:54 PM', 'The other driver left a stop sign without stopping');
-insert into ACCIDENT (id, date, time, description) values (5207, '09-Jan-1961', '9:53 AM', 'The other driver left a stop sign without stopping');
 insert into ACCIDENT (id, date, time, description) values (3634, '17-Jul-1998', '4:30 AM', 'The other driver left a stop sign without stopping');
 insert into ACCIDENT (id, date, time, description) values (3444, '03-Apr-1958', '7:21 AM', 'The other driver left a stop sign without stopping');

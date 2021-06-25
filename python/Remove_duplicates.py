@@ -1,7 +1,7 @@
 import io
 
-k = int(input("Give the column number (starting from 1) where the primary key is"))
-filename = input("Give the file name without the sql extension")
+k = int(input("Give the column number (starting from 1) where the primary key is --> "))
+filename = input("Give the file name without the sql extension --> ")
 
 file = io.open(filename+".sql", 'r', encoding='UTF-8')
 lines = file.read()
