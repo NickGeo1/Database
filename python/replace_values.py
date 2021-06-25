@@ -38,7 +38,7 @@ placeholder = input("What is the placeholder value name to be replaced? --> ")
 to_lines = to_file.read().split('\n')
 
 writefile = io.open("NEWFILE.sql", "a", encoding="UTF-8")
-for i in range(len(to_lines) - 1):
+for i in range(len(to_lines)):
     new_line = to_lines[i].replace("'" + placeholder + "'", "'" + keys_to_be_passed[i] + "'" if type(keys_to_be_passed[i]) == str else str(keys_to_be_passed[i]))
     writefile.write(new_line + '\n')
 
