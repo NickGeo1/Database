@@ -23,11 +23,24 @@ from_lines = from_file.read().split('\n')
 
 keys_to_be_passed = []
 try:
-    keys_to_be_passed = [line[line.find('(', line.find('values')):].strip("();").split(',')[key - 1].replace("'", '') if line[line.find('(', line.find('values')):].strip("();").split(',')[key - 1].replace("'", '')[0] != ' ' else line[line.find('(', line.find('values')):].strip("();").split(',')[key - 1].replace("'", '')[1:] for line in from_lines]
+    for line in from_lines:
+        key_to_be_passed = line[line.find('(', line.find('values')):].strip("();").split(',')[key - 1].replace("'", '') if line[line.find('(', line.find('values')):].strip("();").split(',')[key - 1].replace("'", '')[0] != ' ' else line[line.find('(', line.find('values')):].strip("();").split(',')[key - 1].replace("'", '')[1:]
+        try:
+            key_to_be_passed = int(key_to_be_passed)
+        except:
+            key_to_be_passed = key_to_be_passed
+        keys_to_be_passed.append(key_to_be_passed)
 except IndexError:
     print("The key is out of range.")
 
-print(len(keys_to_be_passed))
+placeholder = input("What is the placeholder value name to be replaced? --> ")
+
+to_lines = to_file.read().split('\n')
+
+writefile = io.open("NEWFILE.sql", "a", encoding="UTF-8")
+for i in range(len(to_lines) - 1):
+    new_line = to_lines[i].replace("'" + placeholder + "'", "'" + keys_to_be_passed[i] + "'" if type(keys_to_be_passed[i]) == str else str(keys_to_be_passed[i]))
+    print(new_line)
 
 '''query = "insert into ACCIDENT (id, date, time, description) values (1205, '25-Feb-1998', '12:36 PM', 'The other driver was looking at his phone');"
 query = query[query.find('(', query.find('values')):].strip("();").split(',')
