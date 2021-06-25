@@ -54,7 +54,7 @@ insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number
 insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('Drusy', 'Tennock', 'Male', '8/8/1994', 37303948810, 'ccicchetto1h@pbs.org', 5820832972);
 insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('Randene', 'Blackborn', 'Female', '18/12/1998', 851546607, 'dalloisi1i@drupal.org', 9183912003);
 insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('Zena', 'Koppelmann', 'Male', '3/6/1981', 56500429545, 'sboas1j@ning.com', 1253046623);
-insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('William', 'De Michetti', 'Male', '30/8/1963', 77369872904, 'ghengoed1k@de.vu', 3177195132);
+insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('William', 'De Michetti', 'Male', '30/8/1963', 72236200166, 'ghengoed1k@de.vu', 3177195132);
 insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('Bernice', 'Floodgate', 'Male', '11/6/1957', 62586584844, 'ghesbrook1l@trellian.com', 6533180766);
 insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('Gualterio', 'Loding', 'Male', '10/5/1963', 82962799526, 'gmackee1m@admin.ch', 7935805638);
 insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('Fredrick', 'Berdale', 'Male', '28/10/1975', 8439713888, 'kmaccarter1n@plala.or.jp', 4736141003);
