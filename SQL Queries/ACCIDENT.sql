@@ -95,7 +95,7 @@ insert into ACCIDENT (id, date, time, description) values (4888, '14-Jan-1987', 
 insert into ACCIDENT (id, date, time, description) values (6336, '03-Jan-1965', '3:25 PM', 'The other driver passed a red light');
 insert into ACCIDENT (id, date, time, description) values (2529, '08-May-1958', '5:33 PM', 'The other driver was looking at his phone');
 insert into ACCIDENT (id, date, time, description) values (2135, '27-Mar-1969', '1:36 PM', 'The other driver was looking at his phone');
-insert into ACCIDENT (id, date, time, description) values (7468, '05-Jul-1959', '7:40 AM', 'The other driver passed a red light');
+insert into ACCIDENT (id, date, time, description) values (7469, '05-Jul-1959', '7:40 AM', 'The other driver passed a red light');
 insert into ACCIDENT (id, date, time, description) values (2687, '12-Jan-1979', '11:36 PM', 'The other driver was coming from left and i was coming from right');
 insert into ACCIDENT (id, date, time, description) values (6375, '01-Oct-1969', '9:17 AM', 'The other driver passed a red light');
 insert into ACCIDENT (id, date, time, description) values (3108, '14-Jan-1992', '2:02 PM', 'The other driver was looking at his phone');
