@@ -54,7 +54,7 @@ insert into ADDRESS (zip_code, city, country, street, number, license) values ('
 insert into ADDRESS (zip_code, city, country, street, number, license) values ('1781', 'Yangfeng', 'China', 'Bunting', 69, 37303948810);
 insert into ADDRESS (zip_code, city, country, street, number, license) values ('408', 'Xialiao', 'China', 'Pankratz', 98, 851546607);
 insert into ADDRESS (zip_code, city, country, street, number, license) values ('797', 'Metz', 'France', 'Wayridge', 52, 56500429545);
-insert into ADDRESS (zip_code, city, country, street, number, license) values ('35', 'Duwayr Raslān', 'Syria', 'Mcbride', 86, 77369872904);
+insert into ADDRESS (zip_code, city, country, street, number, license) values ('35', 'Duwayr Raslān', 'Syria', 'Mcbride', 86, 72236200166);
 insert into ADDRESS (zip_code, city, country, street, number, license) values ('60', 'Xiaochi', 'China', '3rd', 11, 62586584844);
 insert into ADDRESS (zip_code, city, country, street, number, license) values ('16', 'Agrelo', 'Portugal', 'Center', 25, 82962799526);
 insert into ADDRESS (zip_code, city, country, street, number, license) values ('367', 'La Mesa', 'Mexico', 'Sunfield', 68, 8439713888);
