@@ -1,36 +1,34 @@
 import io
 
-f = open('MODEL.sql', 'r')
-lines = f.read()
-lines = lines.split('\n')
-f.close()
+from_file = ""
+while True:
+    from_file = input("Enter the SQL (without the .sql) file you want to pass data FROM --> ")
+    try:
+        from_file = io.open(from_file + ".sql", 'r', encoding='UTF-8')
+        break
+    except:
+        print("This file doesn't exist.")
 
-f = io.open('VEHICLES.sql', 'r', encoding='UTF-8')
-lines_2 = f.read()
-lines_2 = lines_2.split('\n')
-f.close()
+to_file = ""
+while True:
+    to_file = input("Enter the SQL (without the .sql) file you want to pass data TO --> ")
+    try:
+        to_file = io.open(to_file + ".sql", 'r', encoding='UTF-8')
+        break
+    except:
+        print("This file doesn't exist.")
 
-new_file = io.open('VEHICLES_2.sql', 'a', encoding='UTF-8')
+key = int(input("Starting from 1, in what position is the key to be passed located? --> "))
+from_lines = from_file.read().split('\n')
 
-for i in range(327):
-    previous_query = lines[i]
-    previous_query = previous_query.replace("insert into MODEL (model, type, manufacturer) values ", '').strip("();").split(',')[0]
-    query          = lines_2[i].replace("'model')", previous_query + ')')
-    print(query)
-    new_file.write(query + '\n')
+keys_to_be_passed = []
+try:
+    keys_to_be_passed = [line[line.find('(', line.find('values')):].strip("();").split(',')[key - 1].replace("'", '') if line[line.find('(', line.find('values')):].strip("();").split(',')[key - 1].replace("'", '')[0] != ' ' else line[line.find('(', line.find('values')):].strip("();").split(',')[key - 1].replace("'", '')[1:] for line in from_lines]
+except IndexError:
+    print("The key is out of range.")
 
-for i in range(173):
-    previous_query = lines[i]
-    previous_query = previous_query.replace("insert into MODEL (model, type, manufacturer) values ", '').strip("();").split(',')[0]
-    query          = lines_2[i+327].replace("'model')", previous_query + ')')
-    print(query)
-    new_file.write(query + '\n')
+print(len(keys_to_be_passed))
 
-new_file.close()
-
-'''query = "insert into MODEL (model, type, manufacturer) values ('Camry', 'Vans & Trucks', 'Toyota');"
-
-query = query.replace("insert into MODEL (model, type, manufacturer) values ", '').strip("();").split(',')[0]
-#query = query.strip("();")
-#query = query.split(',')[0]
+'''query = "insert into ACCIDENT (id, date, time, description) values (1205, '25-Feb-1998', '12:36 PM', 'The other driver was looking at his phone');"
+query = query[query.find('(', query.find('values')):].strip("();").split(',')
 print(query)'''
