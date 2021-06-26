@@ -1,0 +1,299 @@
+{\rtf1\ansi\ansicpg1253\deff0\nouicompat\deflang1032\deflangfe1032{\fonttbl{\f0\fswiss\fprq2\fcharset0 Calibri;}{\f1\fswiss\fprq2\fcharset161 Calibri Greek;}{\f2\fswiss\fprq2\fcharset161 Calibri;}}
+{\*\generator Riched20 10.0.19041}{\*\mmathPr\mnaryLim0\mdispDef1\mwrapIndent1440 }\viewkind4\uc1 
+\pard\nowidctlpar\sa200\sl276\slmult1\f0\fs22\lang9 DROP TABLE address, accident, contracts, customer, driver, driver_and_vehicle_in_accident, driver_contract, driver_vehicle, phone_numbers, vehicles, model;\par
+\par
+CREATE TABLE CONTRACTS \par
+(\par
+    number BIGINT NOT NULL,\par
+    category VARCHAR(20) NOT NULL,\par
+    starting_date DATE NOT NULL,\par
+    end_date DATE NOT NULL,\par
+    price BIGINT NOT NULL,\par
+    CUSTOMER_email VARCHAR(45) NOT NULL,\par
+    VEHICLES_plates VARCHAR(10) NOT NULL,\par
+    \par
+    primary key(number,CUSTOMER_email,VEHICLES_plates),\par
+\tab unique(CUSTOMER_email),\par
+\tab unique(VEHICLES_plates),\par
+\tab unique(number)\par
+);\par
+\par
+CREATE TABLE CUSTOMER\par
+(\par
+    firstname VARCHAR(30) NOT NULL,\par
+    lastname VARCHAR(30) NOT NULL,\par
+    gender VARCHAR(6) NOT NULL,\par
+    date_of_birth DATE NOT NULL,\par
+    license_number BIGINT NOT NULL,\par
+    email VARCHAR(45) NOT NULL,\par
+    CONTRACTS_number BIGINT NOT NULL,\par
+    primary key(license_number,email,CONTRACTS_number),\par
+\tab unique(license_number),\par
+\tab unique(email),\par
+\tab unique(CONTRACTS_number)\par
+);\par
+\par
+CREATE TABLE VEHICLES\par
+(\par
+    plates VARCHAR(10) NOT NULL,\par
+    registry_number INT NOT NULL,\par
+    color VARCHAR(10) NOT NULL,\par
+    year INT NOT NULL,\par
+    current_price INT NOT NULL,\par
+    contract_number INT NOT NULL,\par
+    caregory VARCHAR(20) NOT NULL,\par
+    CUSTOMER_email VARCHAR(45) NOT NULL,\par
+    MODEL_model VARCHAR(20) NOT NULL,\par
+    PRIMARY KEY (plates,registry_number,contract_number,CUSTOMER_email),\par
+    unique(plates),\par
+    unique(contract_number),\par
+    unique(registry_number),\par
+\tab unique(CUSTOMER_email)\par
+);\par
+\par
+CREATE TABLE DRIVER\par
+(\par
+    firstname VARCHAR(30) NOT NULL,\par
+    lastname VARCHAR(30) NOT NULL,\par
+    gender VARCHAR(6) NOT NULL,\par
+    date_of_birth DATE NOT NULL,\par
+    license_number BIGINT NOT NULL,\par
+    primary key(license_number)\par
+);\par
+\par
+CREATE TABLE DRIVER_VEHICLE\par
+(\par
+    DRIVER_license_number BIGINT NOT NULL,\par
+    VEHICLES_plates VARCHAR(10) NOT NULL,\par
+    primary key(DRIVER_license_number,VEHICLES_plates)\par
+);\par
+\par
+CREATE TABLE DRIVER_CONTRACT\par
+(\par
+    DRIVER_license_number BIGINT NOT NULL,\par
+    CONTRACTS_number BIGINT NOT NULL,\par
+    primary key(DRIVER_license_number,CONTRACTS_number)\par
+);\par
+\par
+CREATE TABLE ACCIDENT\par
+(\par
+    id INT NOT NULL,\par
+    date DATE NOT NULL,\par
+    time TIME NOT NULL,\par
+    description VARCHAR(50) NOT NULL,\par
+    primary key(id)\par
+);\par
+\par
+CREATE TABLE DRIVER_AND_VEHICLE_IN_ACCIDENT\par
+(\par
+    ACCIDENT_id INT NOT NULL,\par
+    VEHICLES_plates VARCHAR(10) NOT NULL,\par
+    DRIVER_license_number BIGINT NOT NULL,\par
+    primary key(ACCIDENT_id,VEHICLES_plates,DRIVER_license_number),\par
+    unique(ACCIDENT_id,VEHICLES_plates),\par
+    unique(ACCIDENT_id,DRIVER_license_number)\par
+);\par
+\par
+CREATE TABLE ADDRESS\par
+(\par
+    zip_code INT NOT NULL,\par
+    city VARCHAR(30) NOT NULL,\par
+    country VARCHAR(30) NOT NULL,\par
+    street VARCHAR(45) NOT NULL,\par
+    number INT NOT NULL,\par
+    license BIGINT NOT NULL,\par
+    type VARCHAR(8) NOT NULL,\par
+    primary key(license)\par
+);\par
+\par
+CREATE TABLE PHONE_NUMBERS\par
+(\par
+    number BIGINT NOT NULL,\par
+    CUSTOMER_email VARCHAR(45) NOT NULL,\par
+    primary key(number,CUSTOMER_email)    \par
+);\par
+\par
+CREATE TABLE MODEL\par
+(\par
+    model VARCHAR(20) NOT NULL,\par
+    type VARCHAR(15) NOT NULL,\par
+    manufacturer VARCHAR(20) NOT NULL,\par
+    primary key(model)\par
+);\par
+\par
+ALTER TABLE CONTRACTS ADD\par
+foreign key(CUSTOMER_email)\par
+references CUSTOMER(email);\par
+\par
+ALTER TABLE CONTRACTS ADD\par
+foreign key(VEHICLES_plates)\par
+references VEHICLES(plates);\par
+\par
+ALTER TABLE CUSTOMER ADD\par
+foreign key(license_number)\par
+references DRIVER(license_number);\par
+\par
+ALTER TABLE CUSTOMER ADD\par
+foreign key(CONTRACTS_number)\par
+references CONTRACTS(number);\par
+\par
+ALTER TABLE VEHICLES ADD\par
+foreign key(contract_number)\par
+references CONTRACTS(number);\par
+\par
+ALTER TABLE VEHICLES ADD\par
+foreign key(CUSTOMER_email)\par
+references CUSTOMER(email);\par
+\par
+ALTER TABLE DRIVER ADD\par
+foreign key(license_number)\par
+references ADDRESS(license);\par
+\par
+ALTER TABLE DRIVER_VEHICLE ADD\par
+foreign key(DRIVER_license_number)\par
+references DRIVER(license_number);\par
+\par
+ALTER TABLE DRIVER_VEHICLE ADD\par
+foreign key(VEHICLES_plates)\par
+references VEHICLES(plates);\par
+\par
+ALTER TABLE DRIVER_CONTRACT ADD\par
+foreign key(DRIVER_license_number)\par
+references DRIVER(license_number);\par
+\par
+ALTER TABLE DRIVER_CONTRACT ADD\par
+foreign key(CONTRACTS_number)\par
+references CONTRACTS(number);\par
+\par
+ALTER TABLE PHONE_NUMBERS ADD\par
+foreign key(CUSTOMER_email)\par
+references CUSTOMER(email);\par
+\par
+ALTER TABLE DRIVER_AND_VEHICLE_IN_ACCIDENT ADD\par
+foreign key(ACCIDENT_id)\par
+references ACCIDENT(id);\par
+\par
+ALTER TABLE DRIVER_AND_VEHICLE_IN_ACCIDENT ADD\par
+foreign key(VEHICLES_plates)\par
+references VEHICLES(plates);\par
+\par
+ALTER TABLE DRIVER_AND_VEHICLE_IN_ACCIDENT ADD\par
+foreign key(DRIVER_license_number)\par
+references DRIVER(license_number);\par
+\par
+insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('Mychal', 'Eslinger', 'Male', '24/7/1960', 9141099782, 'mtupper0@twitter.com', 3922661562);\par
+insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('Henry', 'Alldred', 'Female', '30/4/1993', 29067441591, 'acumpton1@wufoo.com', 2523784061);\par
+insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('Kasey', 'Wyer', 'Male', '9/6/1970', 83400785363, 'jcarwardine2@washingtonpost.com', 6045494126);\par
+insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('Fifine', 'Gert', 'Male', '12/1/1959', 10585180918, 'ddocherty3@bravesites.com', 8930540298);\par
+insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('Alvan', 'Trevino', 'Male', '20/12/1973', 21259783499, 'hluton4@state.tx.us', 4589681789);\par
+insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('Rowen', 'McCuish', 'Male', '28/7/1966', 73024398422, 'wackerman5@1und1.de', 8666992679);\par
+\par
+insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (3922661513, 'Simple', '2019-06-29', '2020-05-10', 19806, 'mtupper0a@twitter.com', 'PMR - 7929');\par
+insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (2523784061, 'Mixed', '1981-10-13', '2027-12-16', 6815, 'acumpton1@wufoo.com', 'MYZ - 8566');\par
+insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (6045494126, 'Mixed', '2004-02-01', '1995-06-30', 7122, 'jcarwardine2@washingtonpost.com', 'BOH - 8290');\par
+insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (8930540298, 'Mixed', '1997-01-26', '2021-07-07', 16429, 'ddocherty3@bravesites.com', 'XXZ - 5711');\par
+insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (4589681789, 'Simple', '1994-10-14', '2028-05-17', 3929, 'hluton4@state.tx.us', 'YYE - 3816');\par
+insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (8666992679, 'Mixed', '2017-06-08', '2021-07-09', 4072, 'wackerman5@1und1.de', 'IOY - 7847');\par
+insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (8666992676, 'Simple', '2017-06-08', '2021-07-09', 4072, 'wackerman52@1und1.de', 'IOT - 7847');\par
+insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (8666992624, 'Simple', '2017-06-08', '2021-07-09', 4072, 'wackerman523@1und1.de', 'IOV - 7847');\par
+\par
+insert into DRIVER_CONTRACT (CONTRACTS_number, DRIVER_license_number) values (3922661562, '12345678');\par
+insert into DRIVER_CONTRACT (CONTRACTS_number, DRIVER_license_number) values (8666992679, '87654321');\par
+\par
+\par
+insert into PHONE_NUMBERS (number, CUSTOMER_email) values ('4581699906', 'wackerman5@1und1.de');\par
+insert into PHONE_NUMBERS (number, CUSTOMER_email) values ('4304185700', 'ddocherty3@bravesites.com');\par
+\par
+INSERT INTO DRIVER VALUES('fn','ln','female','29-09-2001',12345678)\par
+\lang1033 -- \lang9 a\lang1033 . \f1\lang1032\'d0\'ef\'e9\'e1\f0\lang1033  (\f1\lang1032\'ed\'dd\'e1\f0\lang1033 ) \f1\lang1032\'f3\'f5\'ec\'e2\'fc\'eb\'e1\'e9\'e1\f0\lang1033  \f1\lang1032\'f5\'f0\'e5\'e3\'f1\'dc\'f6\'e7\'f3\'e1\'ed\f0\lang1033  \f1\lang1032\'f4\'ef\'ed\f0\lang1033  \f1\lang1032\'f4\'e5\'eb\'e5\'f5\'f4\'e1\'df\'ef\f0\lang1033  \f1\lang1032\'ec\'de\'ed\'e1\f0\lang1033  \f1\lang1032\'ea\'e1\'e9\f0\lang1033  \f1\lang1032\'f0\'ef\'e9\'ef\'e9\f0\lang1033  \f1\lang1032\'e5\'df\'ed\'e1\'e9\f0\lang1033  \f1\lang1032\'ef\'e9\f0\lang1033  \f1\lang1032\'f0\'e5\'eb\'dc\'f4\'e5\'f2\f0\lang1033  \f1\lang1032\'ea\'e1\'e9\f0\lang1033  \f1\lang1032\'ef\'e9\f0\lang1033  \f1\lang1032\'ef\'e4\'e7\'e3\'ef\'df\f0\lang1033  \f1\lang1032\'f0\'ef\'f5\f0\lang1033  \f1\lang1032\'f3\'f7\'e5\'f4\'df\'e6\'ef\'ed\'f4\'e1\'e9\f0\lang1033  \f1\lang1032\'ec\'e5\f0\lang1033  \f1\lang1032\'e1\'f5\'f4\'dc\f0\lang1033 .\par
+SELECT number AS contract_number, starting_date AS last_month, license_number AS customer_license, DRIVER_license_number AS driver_license\par
+FROM CONTRACTS, CUSTOMER, DRIVER_CONTRACT\par
+WHERE extract(month from starting_date)\par
+IN\par
+(\par
+\tab select extract(month from max(starting_date))\par
+\tab from CONTRACTS\par
+)\par
+AND extract(year from starting_date) \par
+IN\par
+(\par
+\tab select extract(year from max(starting_date))\par
+\tab from CONTRACTS\par
+)\par
+AND\par
+email=CUSTOMER_email\par
+AND \par
+DRIVER_CONTRACT.CONTRACTS_number=number\par
+\par
+\par
+\f1\lang1032 -- b. \'d0\'ef\'e9\'e1 \'f3\'f5\'ec\'e2\'fc\'eb\'e1\'e9\'e1 \'e1\'ed\'e1\'ec\'dd\'ed\'e5\'f4\'e1\'e9 \'ed\'e1 \'eb\'de\'ee\'ef\'f5\'ed \'f4\'ef\'ed \'e5\'f0\'fc\'ec\'e5\'ed\'ef \'ec\'de\'ed\'e1 \'ea\'e1\'e9 \'f0\'ef\'e9\'e1 \'e5\'df\'ed\'e1\'e9 \'f4\'e1 \'f4\'e7\'eb\'dd\'f6\'f9\'ed\'e1\par
+-- \'e5\'f0\'e9\'ea\'ef\'e9\'ed\'f9\'ed\'df\'e1\'f2 \'f4\'f9\'ed \'f0\'e5\'eb\'e1\'f4\'fe\'ed \'f0\'ef\'f5 \'f3\'f7\'e5\'f4\'df\'e6\'ef\'ed\'f4\'e1\'e9 \'ec\'e5 \'e1\'f5\'f4\'dc.\par
+\f0\lang1033 SELECT CONTRACTS.number AS contract_number, end_date, PHONE_NUMBERS.number AS customer_phone_number, license_number AS customer_license\par
+FROM CONTRACTS,CUSTOMER,PHONE_NUMBERS\par
+WHERE extract(month from end_date) = extract(month from CURRENT_DATE) + 1 \par
+AND extract(year from end_date) = extract(year from CURRENT_DATE)\par
+AND CONTRACTS_number = CONTRACTS.number\par
+AND CONTRACTS.CUSTOMER_email = PHONE_NUMBERS.CUSTOMER_email\par
+\par
+\f1\lang1032 -- c. \'d0\'ef\'e9\'ef\'f2 \'e5\'df\'ed\'e1\'e9 \'ef \'e1\'f1\'e9\'e8\'ec\'fc\'f2 \'f4\'f9\'ed \'f3\'f5\'ec\'e2\'ef\'eb\'e1\'df\'f9\'ed \'f0\'ef\'f5 \'f5\'f0\'e5\'e3\'f1\'dc\'f6\'e7\'f3\'e1\'ed (\'f0\'e1\'f1\'e1\'eb\'eb\'e1\'e3\'de: \'f0\'ef\'f5 \'e4\'e5\'ed\par
+-- \'e1\'ed\'e1\'ed\'e5\'fe\'e8\'e7\'ea\'e1\'ed) \'e1\'ed\'dc \'e1\'f3\'f6\'e1\'eb\'e9\'f3\'f4\'e9\'ea\'de \'ea\'e1\'f4\'e7\'e3\'ef\'f1\'df\'e1 \'ea\'e1\'e9 \'e1\'ed\'dc \'dd\'f4\'ef\'f2 \'e3\'e9\'e1 \'f4\'e7\'ed \'f0\'e5\'ed\'f4\'e1\'e5\'f4\'df\'e1 2016-2020.\par
+\f0\lang1033\par
+--\f1\lang1032\'e1\'ed\f0\lang1033  \f1\lang1032\'e8\'dd\'eb\'f9\f0\lang1033  \f1\lang1032\'ed\'e1\f0\lang1033  \f1\lang1032\'e4\'e5\'df\'ee\'f9\f0\lang1033  \f1\lang1032\'f4\'ef\f0\lang1033  year \f1\lang1032\'f3\'f5\'e3\'ea\'e5\'ea\'f1\'e9\'ec\'dd\'ed\'e1\f0\lang1033  , \f1\lang1032\'f3\'f4\'ef\f0\lang1033  select \f1\lang1032\'e1\'ed\'f4\'df\f0\lang1033  \f1\lang1032\'e3\'e9\'e1\f0\lang1033  starting_date-> extract(year FROM starting_date)\par
+\par
+SELECT starting_date, category, COUNT(number)\par
+FROM CONTRACTS\par
+WHERE extract( year FROM starting_date ) BETWEEN 2016 AND 2020\par
+WHERE end_date CURRENT_DATE\par
+group by category ,starting_date \par
+\par
+SELECT end_date, category, COUNT(number)\par
+FROM CONTRACTS\par
+WHERE extract( year FROM end_date ) BETWEEN 2016 AND 2020\par
+group by category ,end_date \par
+\par
+\f1\lang1032 -- d. \'d0\'ef\'e9\'e1 \'ea\'e1\'f4\'e7\'e3\'ef\'f1\'df\'e1 \'e1\'f3\'f6\'dc\'eb\'e9\'f3\'e7\'f2 \'f0\'e1\'f1\'ef\'f5\'f3\'e9\'dc\'e6\'e5\'e9 \'e2\'dc\'f3\'e5\'e9 \'f4\'f9\'ed \'f3\'f5\'ec\'e2\'ef\'eb\'e1\'df\'f9\'ed \'f4\'ef\'ed \'ec\'e5\'e3\'e1\'eb\'fd\'f4\'e5\'f1\'ef \'f4\'e6\'df\'f1\'ef\par
+-- (2 \'f0\'e1\'f1\'e1\'eb\'eb\'e1\'e3\'dd\'f2: \'f3\'e5 \'e1\'f0\'fc\'eb\'f5\'f4\'ef\'f5\'f2 \'e1\'f1\'e9\'e8\'ec\'ef\'fd\'f2, \'ec\'e5 \'e1\'ed\'e1\'e3\'f9\'e3\'de \'e2\'dc\'f3\'e5\'e9 \'f0\'eb\'de\'e8\'ef\'f5\'f2 \'f3\'f5\'ec\'e2\'ef\'eb\'e1\'df\'f9\'ed).\par
+\f0\lang1033 SELECT category , sum(price) , COUNT(number)\par
+FROM CONTRACTS  \par
+group by category\par
+order by sum(price) desc;\par
+\par
+-- e. \f2\lang1032\'d0\'ef\'e9\'ef\'f2 \'e5\'df\'ed\'e1\'e9 \'ef \'ec\'dd\'f3\'ef\'f2 \'fc\'f1\'ef\'f2 \'f3\'f5\'ec\'e2\'ef\'eb\'e1\'df\'f9\'ed \'e1\'ed\'dc \'e7\'eb\'e9\'ea\'e9\'e1\'ea\'de \'ef\'ec\'dc\'e4\'e1 \'ef\'f7\'e7\'ec\'dc\'f4\'f9\'ed (\'f0\'e1\'eb\'e1\'e9\'fc\'f4\'e7\'f4\'e1 0-4\par
+-- \'dd\'f4\'e7, 5-9 \'dd\'f4\'e7, 10-19 \'dd\'f4\'e7, 20+ \'dd\'f4\'e7).\par
+ SELECT COUNT(plates) ,extract (year FROM CURRENT_DATE)-year BETWEEN 0 AND 4 AS "0-4", extract (year FROM CURRENT_DATE)-year BETWEEN 5 AND 9 AS "5-9" ,extract (year FROM CURRENT_DATE)- year BETWEEN 10 AND 19 AS "10-19", extract (year FROM CURRENT_DATE)- year >= 20 AS "20+"\par
+ FROM VEHICLES \par
+group by extract (year FROM CURRENT_DATE)-year BETWEEN 0 AND 4 , extract (year FROM CURRENT_DATE)-year BETWEEN 5 AND 9 ,extract (year FROM CURRENT_DATE)- year BETWEEN 10 AND 19, extract (year FROM CURRENT_DATE)- year >= 20 \par
+order by COUNT(plates) desc;\par
+\par
+-- f. \'d0\'ef\'e9\'ef\'f2 \'e5\'df\'ed\'e1\'e9 \'ef \'ec\'dd\'f3\'ef\'f2 \'fc\'f1\'ef\'f2 \'f3\'f5\'ec\'e2\'dc\'ed\'f4\'f9\'ed-\'f0\'e1\'f1\'e1\'e2\'dc\'f3\'e5\'f9\'ed \'e1\'ed\'dc \'e7\'eb\'e9\'ea\'e9\'e1\'ea\'de \'ef\'ec\'dc\'e4\'e1 \'ef\'e4\'e7\'e3\'fe\'ed (18-\par
+-- 24, 25-49, 50-69, 70+).\par
+SELECT COUNT(license_number),extract(year FROM CURRENT_DATE)- extract(year FROM date_of_birth) BETWEEN 18 AND 24 AS "18-24",\par
+extract(year FROM CURRENT_DATE)- extract(year FROM date_of_birth) BETWEEN 25 AND 49 AS "25-49" ,\par
+extract(year FROM CURRENT_DATE)- extract(year FROM date_of_birth) BETWEEN 50 AND 69 AS "50-69",\par
+extract(year FROM CURRENT_DATE)- extract(year FROM date_of_birth) >= 70 AS "70+" \par
+FROM DRIVER ,DRIVER_AND_VEHICLE_IN_ACCIDENT\par
+WHERE DRIVER_license_number = license_number\par
+group by extract(year FROM CURRENT_DATE)- extract(year FROM date_of_birth) BETWEEN 18 AND 24 ,\par
+extract(year FROM CURRENT_DATE)- extract(year FROM date_of_birth) BETWEEN 25 AND 49 ,\par
+extract(year FROM CURRENT_DATE)- extract(year FROM date_of_birth) BETWEEN 50 AND 69 ,\par
+extract(year FROM CURRENT_DATE)- extract(year FROM date_of_birth) >= 70 \par
+order by COUNT(license_number) desc \f0\lang1033 ;\par
+\par
+\b --3a\par
+\b0 CREATE FUNCTION contract_refresh1() RETURNS TRIGGER \par
+LANGUAGE PLPGSQL AS $$\par
+BEGIN\par
+UPDATE CONTRACTS \par
+SET end_date = end_date + interval '1 YEAR'\par
+WHERE (category = 'Professional' AND end_date>=CURRENT_DATE);\par
+RETURN NEW;\par
+END;\par
+$$;\par
+\par
+CREATE TRIGGER contract_refresh1 AFTER INSERT ON CONTRACTS\par
+FOR EACH ROW EXECUTE PROCEDURE contract_refresh1();\par
+\par
+\par
+\lang9\par
+}
+ 
