@@ -1,0 +1,10 @@
+D:\VS Projects\PostgreAPI\bin\Debug\PostgreAPI.exe.config
+D:\VS Projects\PostgreAPI\bin\Debug\PostgreAPI.exe
+D:\VS Projects\PostgreAPI\bin\Debug\PostgreAPI.pdb
+D:\VS Projects\PostgreAPI\obj\Debug\PostgreAPI.csprojAssemblyReference.cache
+D:\VS Projects\PostgreAPI\obj\Debug\PostgreAPI.Properties.Resources.resources
+D:\VS Projects\PostgreAPI\obj\Debug\PostgreAPI.csproj.GenerateResource.cache
+D:\VS Projects\PostgreAPI\obj\Debug\PostgreAPI.csproj.CoreCompileInputs.cache
+D:\VS Projects\PostgreAPI\obj\Debug\PostgreAPI.exe
+D:\VS Projects\PostgreAPI\obj\Debug\PostgreAPI.pdb
+D:\VS Projects\PostgreAPI\obj\Debug\PostgreAPI.FormMainMenu.resources
