@@ -67,10 +67,14 @@ namespace PostgreAPI
                     filename = "a.sql";
                     break;
                 case "button3":
+
                     filename = "b.sql";
                     break;
                 case "button4":
-                    filename = "c.sql";
+                    if (MessageBox.Show("Ποια παραλλαγή του ερωτήματος θα δείτε;\n\nΠατήστε YES για την πρώτη παραλλαγή.\nΠατήστε NO για την δεύτερη παραλλαγή.", "Παραλλαγή Θέματος", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        filename = "c1.sql";
+                    else
+                        filename = "c2.sql";
                     break;
                 case "button5":
                     filename = "d.sql";
