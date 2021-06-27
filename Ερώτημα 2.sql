@@ -68,7 +68,13 @@ order by sum(price) desc;
 -- e. Ποιος είναι ο μέσος όρος συμβολαίων ανά ηλικιακή ομάδα οχημάτων (παλαιότητα 0-4
 -- έτη, 5-9 έτη, 10-19 έτη, 20+ έτη).
 
-SELECT COUNT(plates) ,extract (year FROM CURRENT_DATE)-year BETWEEN 0 AND 4 AS "0-4", extract (year FROM CURRENT_DATE)-year BETWEEN 5 AND 9 AS "5-9" ,extract (year FROM CURRENT_DATE)- year BETWEEN 10 AND 19 AS "10-19", extract (year FROM CURRENT_DATE)- year >= 20 AS "20+"
+SELECT COUNT(plates) AS "contracts_in_age_group",
+count(DISTINCT YEAR) AS distinct_years_in_group,
+count(plates)/count(DISTINCT YEAR) AS average_contracts_per_year_in_group,
+extract (year FROM CURRENT_DATE)-year BETWEEN 0 AND 4 AS "age_group 0-4",
+extract (year FROM CURRENT_DATE)-year BETWEEN 5 AND 9 AS "age_group 5-9",
+extract (year FROM CURRENT_DATE)- year BETWEEN 10 AND 19 AS "age_group 10-19", 
+extract (year FROM CURRENT_DATE)- year >= 20 AS "age_group 20+"
 FROM VEHICLES 
 group by extract (year FROM CURRENT_DATE)-year BETWEEN 0 AND 4 , extract (year FROM CURRENT_DATE)-year BETWEEN 5 AND 9 ,extract (year FROM CURRENT_DATE)- year BETWEEN 10 AND 19, extract (year FROM CURRENT_DATE)- year >= 20 
 order by COUNT(plates) desc;
@@ -78,10 +84,13 @@ order by COUNT(plates) desc;
 -- f. Ποιος είναι ο μέσος όρος συμβάντων-παραβάσεων ανά ηλικιακή ομάδα οδηγών (18-
 -- 24, 25-49, 50-69, 70+).
 
-SELECT COUNT(license_number),extract(year FROM CURRENT_DATE)- extract(year FROM date_of_birth) BETWEEN 18 AND 24 AS "18-24",
-extract(year FROM CURRENT_DATE)- extract(year FROM date_of_birth) BETWEEN 25 AND 49 AS "25-49" ,
-extract(year FROM CURRENT_DATE)- extract(year FROM date_of_birth) BETWEEN 50 AND 69 AS "50-69",
-extract(year FROM CURRENT_DATE)- extract(year FROM date_of_birth) >= 70 AS "70+" 
+SELECT COUNT(license_number) AS accidents_in_age_group,
+COUNT(DISTINCT extract(year FROM CURRENT_DATE)- extract(year FROM date_of_birth)) AS distinct_ages_in_age_group,
+COUNT(license_number)/COUNT(DISTINCT extract(year FROM CURRENT_DATE)- extract(year FROM date_of_birth)) AS average_accidents_per_age_in_group,
+extract(year FROM CURRENT_DATE)- extract(year FROM date_of_birth) BETWEEN 18 AND 24 AS "age_group 18-24",
+extract(year FROM CURRENT_DATE)- extract(year FROM date_of_birth) BETWEEN 25 AND 49 AS "age_group 25-49" ,
+extract(year FROM CURRENT_DATE)- extract(year FROM date_of_birth) BETWEEN 50 AND 69 AS "age_group 50-69",
+extract(year FROM CURRENT_DATE)- extract(year FROM date_of_birth) >= 70 AS "age_group 70+" 
 FROM DRIVER ,DRIVER_AND_VEHICLE_IN_ACCIDENT
 WHERE DRIVER_license_number = license_number
 group by extract(year FROM CURRENT_DATE)- extract(year FROM date_of_birth) BETWEEN 18 AND 24 ,
