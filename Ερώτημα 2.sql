@@ -1,7 +1,7 @@
 
 -- a. Ποια (νέα) συμβόλαια υπεγράφησαν τον τελευταίο μήνα και ποιοι είναι οι πελάτες και οι οδηγοί που σχετίζονται με αυτά.
 
-SELECT number AS contract_number, starting_date AS last_month, license_number AS customer_license, DRIVER_license_number AS driver_license
+SELECT number AS contract_number, starting_date AS last_month_starting_date, license_number AS customer_license, DRIVER_license_number AS driver_license
 FROM CONTRACTS, CUSTOMER, DRIVER_CONTRACT
 WHERE extract(month from starting_date)
 IN
@@ -25,7 +25,7 @@ DRIVER_CONTRACT.CONTRACTS_number=number
 -- b. Ποια συμβόλαια αναμένεται να λήξουν τον επόμενο μήνα και ποια είναι τα τηλέφωνα
 -- επικοινωνίας των πελατών που σχετίζονται με αυτά.
 
-SELECT CONTRACTS.number AS contract_number, end_date, PHONE_NUMBERS.number AS customer_phone_number, license_number AS customer_license
+SELECT CONTRACTS.number AS contract_number, next_month_end_date, PHONE_NUMBERS.number AS customer_phone_number, license_number AS customer_license
 FROM CONTRACTS,CUSTOMER,PHONE_NUMBERS
 WHERE extract(month from end_date) = extract(month from CURRENT_DATE) + 1 
 AND extract(year from end_date) = extract(year from CURRENT_DATE)
@@ -40,29 +40,29 @@ AND CONTRACTS.CUSTOMER_email = PHONE_NUMBERS.CUSTOMER_email
 
 --παραλλαγή 1
 
-SELECT starting_date, category, COUNT(number)
+SELECT extract( year from starting_date) AS starting_year, category, COUNT(number)
 FROM CONTRACTS
 WHERE extract( year FROM starting_date ) BETWEEN 2016 AND 2020
-group by category ,starting_date 
+group by category , extract( year from starting_date)  
 
 
 --παραλλαγή 2
 
-SELECT end_date, category, COUNT(number)
+SELECT extract( year from end_date) AS non_renewed_year, category, COUNT(number)
 FROM CONTRACTS
-WHERE extract( year FROM end_date ) BETWEEN 2016 AND 2020
-group by category ,end_date 
+WHERE extract( year FROM end_date) BETWEEN 2016 AND 2020
+group by category , extract( year from end_date) 
 
 
 
 -- d. Ποια κατηγορία ασφάλισης παρουσιάζει βάσει των συμβολαίων τον μεγαλύτερο τζίρο
 -- (2 παραλλαγές: σε απόλυτους αριθμούς, με αναγωγή βάσει πλήθους συμβολαίων).
 
-SELECT category , sum(price) , COUNT(number)
+SELECT category , sum(price) AS total_profit , COUNT(number) AS total_contracts
 FROM CONTRACTS  
 group by category
-order by sum(price) desc;
-
+order by sum(price) desc
+limit 1;
 
 
 -- e. Ποιος είναι ο μέσος όρος συμβολαίων ανά ηλικιακή ομάδα οχημάτων (παλαιότητα 0-4

@@ -2,7 +2,7 @@
 -- ανανεώθηκαν) ανά ασφαλιστική κατηγορία και ανά έτος για την πενταετία 2016-2020.
 -- παραλλαγή 1
 
-SELECT starting_date, category, COUNT(number)
+SELECT extract( year from starting_date) AS starting_year, category, COUNT(number)
 FROM CONTRACTS
 WHERE extract( year FROM starting_date ) BETWEEN 2016 AND 2020
-group by category ,starting_date 
+group by category , extract( year from starting_date)   
