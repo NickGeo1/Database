@@ -1108,6 +1108,11 @@ insert into ADDRESS (zip_code, city, country, street, number, license) values ('
 insert into ADDRESS (zip_code, city, country, street, number, license) values ('3227', 'Aourir', 'Morocco', 'Bashford', 81, 39540527592);
 insert into ADDRESS (zip_code, city, country, street, number, license) values ('6322', 'Marseille', 'France', 'Magdeline', 99, 55014770790);
 insert into ADDRESS (zip_code, city, country, street, number, license) values ('96', 'Fakaifou Village', 'Tuvalu', 'Ramsey', 91, 7701984209);
+insert into ADDRESS (zip_code, city, country, street, number, license) values ('28', 'Gulai', 'China', 'Westport', 55, 90477459409);
+insert into ADDRESS (zip_code, city, country, street, number, license) values ('6', 'Yeniugou', 'China', 'Lakewood', 44, 39658900374);
+insert into ADDRESS (zip_code, city, country, street, number, license) values ('133', 'Seboruco', 'Venezuela', 'Darwin', 55, 37173621161);
+insert into ADDRESS (zip_code, city, country, street, number, license) values ('65', 'San Antonio de Los Altos', 'Venezuela', 'Cottonwood', 4, 68921504645);
+
 
 -- CONTRACTS
 insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (3922661562, 'Simple', '1991-07-29', '1985-05-10', 19806, 'mtupper0@twitter.com', 'PME - 7929');
@@ -1610,6 +1615,11 @@ insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOME
 insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (8865417378, 'Professional', '2015-07-11', '2017-07-03', 12356, 'okorbadt@blog.com', 'BOY - 6172');
 insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (7957241332, 'Mixed', '2015-04-10', '1989-11-08', 6691, 'gwohlersdu@studiopress.com', 'TPZ - 9756');
 insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (4755150079, 'Mixed', '2001-08-03', '2006-05-03', 5847, 'cblazekdv@geocities.jp', 'ONT - 5305');
+insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (8832130158, 'Simple', '1996-02-20', '2021-08-26', 11602, 'swannes97d@zimbio.com', 'APZ - 6888');
+insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (339607963, 'Mixed', '1982-04-22', '2021-08-11', 8151, 'ssach99e@deviantart.com', 'TNM - 4990');
+insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (8838430158, 'Simple', '1999-01-20', '2021-09-16', 10602, 'swanves97d@zimbio.com', 'AOO - 7036');
+insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (339047963, 'Professional', '1973-03-12', '2021-09-14', 8751, 'ssacho99e@deviantart.com', 'THI - 5250');
+
 
 -- CUSTOMER
 insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('Mychal', 'Eslinger', 'Male', '24/7/1960', 9141099782, 'mtupper0@twitter.com', 3922661562);
@@ -2112,6 +2122,10 @@ insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number
 insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('Adelle', 'Konig', 'Male', '1/7/1975', 39540527592, 'okorbadt@blog.com', 8865417378);
 insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('Jasen', 'Herreros', 'Female', '26/11/1987', 55014770790, 'gwohlersdu@studiopress.com', 7957241332);
 insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('Phil', 'Pennacci', 'Male', '18/11/1975', 7701984209, 'cblazekdv@geocities.jp', 4755150079);
+insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('Micheline', 'Eagland', 'Male', '8/3/1979', 90477459409, 'swannes97d@zimbio.com', 8832130158);
+insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('Nerty', 'Abbatt', 'Female', '21/3/1962', 39658900374, 'ssach99e@deviantart.com', 339607963);
+insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('Honor', 'Dillistone', 'Female', '7/9/1999', 37173621161, 'swanves97d@zimbio.com', 8838430158);
+insert into CUSTOMER (firstname, lastname, gender, date_of_birth, license_number, email, CONTRACTS_number) values ('Alistair', 'Cristofalo', 'Male', '31/10/1996', 68921504645, 'ssacho99e@deviantart.com', 339047963);
 
 -- DRIVER
 insert into DRIVER (firstname, lastname, gender, date_of_birth, license_number) values ('Mychal','Eslinger','Male','24/7/1960',9141099782);
@@ -4612,6 +4626,10 @@ insert into PHONE_NUMBERS (number, CUSTOMER_email) values ('8057554585', 'rrevil
 insert into PHONE_NUMBERS (number, CUSTOMER_email) values ('7837352524', 'okorbadt@blog.com');
 insert into PHONE_NUMBERS (number, CUSTOMER_email) values ('1202518754', 'gwohlersdu@studiopress.com');
 insert into PHONE_NUMBERS (number, CUSTOMER_email) values ('4033297677', 'cblazekdv@geocities.jp');
+insert into PHONE_NUMBERS (number, CUSTOMER_email) values ('3887875320', 'swannes97d@zimbio.com');
+insert into PHONE_NUMBERS (number, CUSTOMER_email) values ('4559277253', 'ssach99e@deviantart.com');
+insert into PHONE_NUMBERS (number, CUSTOMER_email) values ('3887096380', 'swanves97d@zimbio.com');
+insert into PHONE_NUMBERS (number, CUSTOMER_email) values ('4577302853', 'ssacho99e@deviantart.com');
 
 -- model
 insert into MODEL (model, type, manufacturer) values ('XT', 'Performance', 'Subaru');
@@ -5443,6 +5461,11 @@ insert into VEHICLES (plates, registry_number, color, year, current_price, contr
 insert into VEHICLES (plates, registry_number, color, year, current_price, contract_number, category, CUSTOMER_email, MODEL_model) values ('BOY - 6172', 986853, 'Green', 2003, 41063, 8865417378, 'Professional', 'okorbadt@blog.com', 'X6 M');
 insert into VEHICLES (plates, registry_number, color, year, current_price, contract_number, category, CUSTOMER_email, MODEL_model) values ('TPZ - 9756', 333359, 'Puce', 2011, 39048, 7957241332,  'Mixed', 'gwohlersdu@studiopress.com', 'SX4');
 insert into VEHICLES (plates, registry_number, color, year, current_price, contract_number, category, CUSTOMER_email, MODEL_model) values ('ONT - 5305', 117458, 'Yellow', 2006, 11337, 4755150079,  'Mixed', 'cblazekdv@geocities.jp', 'M3');
+insert into VEHICLES (plates, registry_number, color, year, current_price, contract_number, category, CUSTOMER_email, MODEL_model) values ('APZ - 6888', 270511, 'Blue', 1987, 40672, 8832130158,  'Simple', 'swannes97d@zimbio.com', 'Mirage');
+insert into VEHICLES (plates, registry_number, color, year, current_price, contract_number, category, CUSTOMER_email, MODEL_model) values ('TNM - 4990', 741940, 'Indigo', 2012, 60334, 339607963,  'Mixed', 'ssach99e@deviantart.com', 'B9 Tribeca');
+insert into VEHICLES (plates, registry_number, color, year, current_price, contract_number, category, CUSTOMER_email, MODEL_model) values ('AOO - 7036', 296118, 'Puce', 1992, 68919, 8838430158,  'Simple', 'swanves97d@zimbio.com', 'Intrepid');
+insert into VEHICLES (plates, registry_number, color, year, current_price, contract_number, category, CUSTOMER_email, MODEL_model) values ('THI - 5250', 367395, 'Pink', 2001, 29243, 339047963,  'Professional', 'ssacho99e@deviantart.com', 'Mazda5');
+
 
 ALTER TABLE CONTRACTS ADD
 foreign key(CUSTOMER_email)
