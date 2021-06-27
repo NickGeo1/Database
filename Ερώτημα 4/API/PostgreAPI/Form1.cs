@@ -22,7 +22,7 @@ namespace PostgreAPI
         private void FormMainMenu_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'ergasia1.accident' table. You can move, or remove it, as needed.
-            this.accidentTableAdapter.Fill(this.ergasia1.accident);
+            // this.accidentTableAdapter.Fill(this.ergasia1.accident);
 
 
         }
@@ -76,8 +76,10 @@ namespace PostgreAPI
                     filename = "d.sql";
                     break;
                 case "button6":
+                    filename = "e.sql";
                     break;
                 case "button7":
+                    filename = "f.sql";
                     break;
             }
 

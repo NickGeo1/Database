@@ -147,7 +147,7 @@ namespace PostgreAPI
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(189, 32);
             this.button4.TabIndex = 6;
-            this.button4.Text = "Ερώτημα (Γ)";
+            this.button4.Text = "Ερώτημα (C)";
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.onErotimaButtonClick);
             // 
@@ -161,7 +161,7 @@ namespace PostgreAPI
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(189, 32);
             this.button5.TabIndex = 7;
-            this.button5.Text = "Ερώτημα (Δ)";
+            this.button5.Text = "Ερώτημα (D)";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.onErotimaButtonClick);
             // 
@@ -189,7 +189,7 @@ namespace PostgreAPI
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(189, 32);
             this.button7.TabIndex = 9;
-            this.button7.Text = "Ερώτημα (ΣΤ)";
+            this.button7.Text = "Ερώτημα (F)";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.onErotimaButtonClick);
             // 

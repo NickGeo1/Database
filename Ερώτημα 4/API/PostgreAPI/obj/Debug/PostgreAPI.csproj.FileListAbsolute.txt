@@ -8,3 +8,13 @@ D:\VS Projects\PostgreAPI\obj\Debug\PostgreAPI.csproj.CoreCompileInputs.cache
 D:\VS Projects\PostgreAPI\obj\Debug\PostgreAPI.exe
 D:\VS Projects\PostgreAPI\obj\Debug\PostgreAPI.pdb
 D:\VS Projects\PostgreAPI\obj\Debug\PostgreAPI.FormMainMenu.resources
+D:\GitHub Repositories\Database\Ερώτημα 4\API\PostgreAPI\bin\Debug\PostgreAPI.exe.config
+D:\GitHub Repositories\Database\Ερώτημα 4\API\PostgreAPI\bin\Debug\PostgreAPI.exe
+D:\GitHub Repositories\Database\Ερώτημα 4\API\PostgreAPI\bin\Debug\PostgreAPI.pdb
+D:\GitHub Repositories\Database\Ερώτημα 4\API\PostgreAPI\obj\Debug\PostgreAPI.csprojAssemblyReference.cache
+D:\GitHub Repositories\Database\Ερώτημα 4\API\PostgreAPI\obj\Debug\PostgreAPI.FormMainMenu.resources
+D:\GitHub Repositories\Database\Ερώτημα 4\API\PostgreAPI\obj\Debug\PostgreAPI.Properties.Resources.resources
+D:\GitHub Repositories\Database\Ερώτημα 4\API\PostgreAPI\obj\Debug\PostgreAPI.csproj.GenerateResource.cache
+D:\GitHub Repositories\Database\Ερώτημα 4\API\PostgreAPI\obj\Debug\PostgreAPI.csproj.CoreCompileInputs.cache
+D:\GitHub Repositories\Database\Ερώτημα 4\API\PostgreAPI\obj\Debug\PostgreAPI.exe
+D:\GitHub Repositories\Database\Ερώτημα 4\API\PostgreAPI\obj\Debug\PostgreAPI.pdb
