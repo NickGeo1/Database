@@ -1115,14 +1115,14 @@ insert into ADDRESS (zip_code, city, country, street, number, license) values ('
 
 
 -- CONTRACTS
-insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (3922661562, 'Simple', '1991-07-29', '1985-05-10', 19806, 'mtupper0@twitter.com', 'PME - 7929');
-insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (2523784061, 'Mixed', '1981-10-13', '2027-12-16', 6815, 'acumpton1@wufoo.com', 'MYZ - 8566');
-insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (6045494126, 'Professional', '2004-02-01', '1995-06-30', 7122, 'jcarwardine2@washingtonpost.com', 'BOH - 8290');
-insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (8930540298, 'Mixed', '1997-01-26', '2032-06-07', 16429, 'ddocherty3@bravesites.com', 'XXZ - 5711');
-insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (4589681789, 'Simple', '1994-10-14', '2028-05-17', 3929, 'hluton4@state.tx.us', 'YYE - 3816');
-insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (8666992679, 'Professional', '2018-11-08', '1987-01-09', 4072, 'wackerman5@1und1.de', 'IOY - 7847');
-insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (646345348, 'Professional', '1990-09-08', '2023-06-30', 10506, 'jryves6@usgs.gov', 'NKO - 2117');
-insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (110264924, 'Professional', '1994-03-07', '1996-03-25', 19572, 'aroocroft7@technorati.com', 'TYT - 9023');
+insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (3922661562, 'Simple', '1991-07-29', CURRENT_DATE, 19806, 'mtupper0@twitter.com', 'PME - 7929');
+insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (2523784061, 'Mixed', '1981-10-13', CURRENT_DATE, 6815, 'acumpton1@wufoo.com', 'MYZ - 8566');
+insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (6045494126, 'Professional', '2004-02-01', CURRENT_DATE, 7122, 'jcarwardine2@washingtonpost.com', 'BOH - 8290');
+insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (8930540298, 'Mixed', '1997-01-26', CURRENT_DATE + interval '1 MONTH', 16429, 'ddocherty3@bravesites.com', 'XXZ - 5711');
+insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (4589681789, 'Simple', '1994-10-14', CURRENT_DATE + interval '1 MONTH', 3929, 'hluton4@state.tx.us', 'YYE - 3816');
+insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (8666992679, 'Professional', '2018-11-08', CURRENT_DATE, 4072, 'wackerman5@1und1.de', 'IOY - 7847');
+insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (646345348, 'Professional', '1990-09-08', CURRENT_DATE, 10506, 'jryves6@usgs.gov', 'NKO - 2117');
+insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (110264924, 'Professional', '1994-03-07', CURRENT_DATE + interval '1 MONTH', 19572, 'aroocroft7@technorati.com', 'TYT - 9023');
 insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (558998216, 'Professional', '2011-05-09', '2027-09-19', 16394, 'rlatchmore8@toplist.cz', 'PMH - 8234');
 insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (8288553281, 'Mixed', '1987-01-17', '1993-06-16', 14001, 'ccorkill9@umn.edu', 'ZMH - 7467');
 insert into CONTRACTS (number, category, starting_date, end_date, price, CUSTOMER_email, VEHICLES_plates) values (9868928297, 'Mixed', '1982-07-14', '1985-10-27', 5650, 'ciskowa@wsj.com', 'IZP - 2204');
@@ -5465,6 +5465,11 @@ insert into VEHICLES (plates, registry_number, color, year, current_price, contr
 insert into VEHICLES (plates, registry_number, color, year, current_price, contract_number, category, CUSTOMER_email, MODEL_model) values ('TNM - 4990', 741940, 'Indigo', 2012, 60334, 339607963,  'Mixed', 'ssach99e@deviantart.com', 'B9 Tribeca');
 insert into VEHICLES (plates, registry_number, color, year, current_price, contract_number, category, CUSTOMER_email, MODEL_model) values ('AOO - 7036', 296118, 'Puce', 1992, 68919, 8838430158,  'Simple', 'swanves97d@zimbio.com', 'Intrepid');
 insert into VEHICLES (plates, registry_number, color, year, current_price, contract_number, category, CUSTOMER_email, MODEL_model) values ('THI - 5250', 367395, 'Pink', 2001, 29243, 339047963,  'Professional', 'ssacho99e@deviantart.com', 'Mazda5');
+
+--fix wrong endings on contracts
+UPDATE CONTRACTS
+SET end_date=end_date + interval '40 YEARS'
+WHERE starting_date>end_date;
 
 
 ALTER TABLE CONTRACTS ADD
