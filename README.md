@@ -4,8 +4,8 @@ A comprehensive PostgreSQL-based database project modeling a motor vehicle insur
 
 ## 🛠 Technologies Used
 
-- **PostgreSQL** – Relational database
-- **SQL** – Schema creation, normalization, queries, triggers, and cursors
+- **MySQL** – Schema design and normalization
+- **PostgreSQL-SQL** – Implementation and test of table creation commands, queries, trigger and cursor
 - **C# .NET (WinForms)** – Front-end desktop application
 - **ODBC Connector** – Interface between C# client and PostgreSQL
 - **Mockaroo** – Data generation for realistic test datasets
